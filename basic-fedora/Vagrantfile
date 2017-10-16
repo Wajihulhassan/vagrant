@@ -47,11 +47,11 @@ Vagrant.configure(2) do |config|
    # Display the VirtualBox GUI when booting the machine
    vb.gui = true
    # Customize the amount of memory on the VM:
-   vb.memory = 2048
+   vb.memory = 8000
    # Customize CPU cap
    vb.customize ["modifyvm", :id, "--cpuexecutioncap", "70"]
    # Customize number of CPU
-   vb.cpus = 2
+   vb.cpus = 8
    # Customize VM name
    vb.name = "CamFlow-basic"
   end
@@ -74,7 +74,7 @@ Vagrant.configure(2) do |config|
     sudo chmod 755 /usr/bin/it
     sudo dnf -y -v groupinstall 'Development Tools'
     sudo dnf -y -v install ncurses-devel elfutils-libelf-devel cmake clang gcc-c++ wget git openssl-devel bc nano patch sparse flawfinder
-    git clone https://github.com/CamFlow/camflow-install.git
+    git clone https://github.com/Wajihulhassan/camflow-install.git
     cd camflow-install && sudo make all
     cd ..
     git clone https://github.com/CamFlow/examples.git
